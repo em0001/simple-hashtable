@@ -1,0 +1,76 @@
+File used to see the performance of each of these methods contained 500 lines
+Results are set out as number of probes when *using name to create the key*, *using phone number to create the key*, *using email to create the key*
+Overall the Java String's hashcode method and my rotation implementation peformed the best and the average number of probes at each hashtable size was quite similar:
+
+Average number of probes for the different hashcode sizes:
+Rotate: 
+Size 503: 5940
+Size 337: 4225
+Size 2063: 584
+
+Java String: 
+Size 503: 6738
+Size 337: 3604
+Size 2063: 590
+
+Java String's implementation is expected to be one of if not the best implmentations as Java uses it in the String class but on average the rotation implementation performed quite similar
+As expected as the size of the hashtables grew without increasing the number of elements being added to it less collisions occurred and thus probes needed to occur.
+
+/****** Rotation implementation: ******/
+(Hashtable size 503:)
+Number of probes: 6160, 5504, 6156
+Ideal number of probes: 500, 500, 500
+Percentage of hahtable used: 0.9940357852882704
+
+(Hashtable size 337:)
+Number of probes: 3380, 5883, 3413
+Ideal number of probes: 336, 336, 336
+Percentage of hahtable used: 0.9970326409495549
+
+(Hashtable size 2063:)
+Number of probes: 582, 594, 576
+Ideal number of probes: 500, 500, 500
+Percentage of hahtable used: 0.2423654871546292
+
+
+
+
+/****** Java String's version of the hashcode method: ******/
+(Hashtable size 503:)
+Number of probes: 5182, 7951, 7082 
+Ideal number of probes: 500, 500, 500
+Percentage of hahtable used: 0.9940357852882704
+
+(Hashtable size 337:)
+Number of probes: 3990, 2327, 4495
+Ideal number of probes: 336, 336, 336
+Percentage of hahtable used: 0.9970326409495549
+
+(Hashtable size 2063:)
+Number of probes: 579, 580, 611
+Ideal number of probes: 500, 500, 500
+Percentage of hahtable used: 0.2423654871546292
+
+
+
+
+
+
+/****** Folding implementation: ******/
+(Hashtable size 503:)
+Number of probes: 7702, 7680, 8410
+Ideal number of probes: 500, 500, 500
+Percentage of hahtable used: 0.9940357852882704
+
+(Hashtable size 337:)
+Number of probes: 4556, 2950, 2486
+Ideal number of probes: 336, 336, 336
+Percentage of hahtable used: 0.9970326409495549
+
+(Hashtable size 2063:)
+Number of probes: 581, 925, 600
+Ideal number of probes: 500, 500, 500
+Percentage of hahtable used: 0.2423654871546292
+
+
+
